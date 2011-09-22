@@ -17,16 +17,16 @@ libalkimia is a library with common classes and functionality used by
 finance applications for the KDE SC.
 
 %package devel
-Summary:	Header files for FOO library
-Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki FOO
+Summary:	Header files for alkimia library
+Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki alkimia
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 
 %description devel
-Header files for FOO library.
+Header files for alkimia library.
 
 %description devel -l pl.UTF-8
-Pliki nagłówkowe biblioteki FOO.
+Pliki nagłówkowe biblioteki alkimia.
 
 %prep
 %setup -q
