@@ -1,11 +1,12 @@
 Summary:	common classes and functionality used by finance applications for the KDE SC
 Name:		libalkimia
 Version:	4.3.1
-Release:	1
+Release:	2
 License:	LGPL
 Group:		Libraries
 Source0:	%{name}-%{version}.tar.bz2
 # Source0-md5:	73d7f1365118019030b2045d95c92456
+Patch0:		link.patch
 URL:		http://community.kde.org/Alkimia/libalkimia
 BuildRequires:	cmake
 BuildRequires:	gmp-c++-devel
@@ -31,6 +32,7 @@ Pliki nagłówkowe biblioteki alkimia.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 install -d build
