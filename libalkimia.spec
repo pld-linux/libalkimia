@@ -9,6 +9,7 @@ Source0:	%{name}-%{version}.tar.bz2
 URL:		http://community.kde.org/Alkimia/libalkimia
 BuildRequires:	cmake
 BuildRequires:	gmp-c++-devel
+BuildRequires:	kde4-kdelibs-devel
 BuildRequires:	rpmbuild(macros) >= 1.600
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
