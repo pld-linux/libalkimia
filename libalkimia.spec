@@ -1,7 +1,7 @@
 Summary:	common classes and functionality used by finance applications for the KDE SC
 Name:		libalkimia
 Version:	4.3.1
-Release:	2
+Release:	3
 License:	LGPL
 Group:		Libraries
 Source0:	%{name}-%{version}.tar.bz2
