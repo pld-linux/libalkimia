@@ -1,28 +1,41 @@
-Summary:	common classes and functionality used by finance applications for the KDE SC
+Summary:	Common classes and functionality used by finance applications for the KDE SC
+Summary(pl.UTF-8):	Wspólne klasy i funkcje wykorzystywane przez aplikacje finansowe dla KDE SC
 Name:		libalkimia
 Version:	4.3.1
 Release:	3
-License:	LGPL
+License:	LGPL v2.1+
 Group:		Libraries
 Source0:	%{name}-%{version}.tar.bz2
 # Source0-md5:	73d7f1365118019030b2045d95c92456
 Patch0:		link.patch
 URL:		http://community.kde.org/Alkimia/libalkimia
-BuildRequires:	cmake
+BuildRequires:	QtCore-devel >= 4
+BuildRequires:	cmake >= 2.6.4
+BuildRequires:	doxygen
 BuildRequires:	gmp-c++-devel
-BuildRequires:	kde4-kdelibs-devel
-BuildRequires:	rpmbuild(macros) >= 1.600
+BuildRequires:	kde4-kdelibs-devel >= 4
+BuildRequires:	libstdc++-devel
+BuildRequires:	pkgconfig
+BuildRequires:	rpmbuild(macros) >= 1.606
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 libalkimia is a library with common classes and functionality used by
 finance applications for the KDE SC.
 
+%description -l pl.UTF-8
+libalkimia to biblioteka ze wspólnymi klasami i funkcjami
+wykorzystywanymi przez aplikacje finansowe dla KDE SC.
+
 %package devel
 Summary:	Header files for alkimia library
 Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki alkimia
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
+Requires:	QtCore-devel >= 4
+Requires:	gmp-c++-devel
+Requires:	kde4-kdelibs-devel >= 4
+Requires:	libstdc++-devel
 
 %description devel
 Header files for alkimia library.
