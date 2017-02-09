@@ -1,13 +1,13 @@
 Summary:	Common classes and functionality used by finance applications for the KDE SC
 Summary(pl.UTF-8):	Wspólne klasy i funkcje wykorzystywane przez aplikacje finansowe dla KDE SC
 Name:		libalkimia
-Version:	4.3.1
-Release:	3
+Version:	4.3.2
+Release:	1
 License:	LGPL v2.1+
 Group:		Libraries
-Source0:	%{name}-%{version}.tar.bz2
-# Source0-md5:	73d7f1365118019030b2045d95c92456
-Patch0:		link.patch
+# http://kde-apps.org/CONTENT/content-files/137323-%{name}-%{version}.tar.bz2 (no longer available)
+Source0:	http://pkgs.fedoraproject.org/repo/pkgs/libalkimia/137323-libalkimia-4.3.2.tar.bz2/8d7b529c7be5f72ae1cbb02e818e9b79/137323-%{name}-%{version}.tar.bz2
+# Source0-md5:	8d7b529c7be5f72ae1cbb02e818e9b79
 URL:		http://community.kde.org/Alkimia/libalkimia
 BuildRequires:	QtCore-devel >= 4
 BuildRequires:	cmake >= 2.6.4
@@ -45,7 +45,6 @@ Pliki nagłówkowe biblioteki alkimia.
 
 %prep
 %setup -q
-%patch0 -p1
 
 %build
 install -d build
@@ -67,8 +66,8 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc ChangeLog
-%attr(755,root,root) %{_libdir}/libalkimia.so.4.3.1
+%doc libalkimia/ChangeLog
+%attr(755,root,root) %{_libdir}/libalkimia.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libalkimia.so.4
 
 %files devel
