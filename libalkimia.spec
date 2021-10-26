@@ -1,19 +1,20 @@
 Summary:	Common classes and functionality used by finance applications for the KDE SC
 Summary(pl.UTF-8):	Wspólne klasy i funkcje wykorzystywane przez aplikacje finansowe dla KDE SC
 Name:		libalkimia
-Version:	4.3.2
+Version:	7.0.1
 Release:	1
 License:	LGPL v2.1+
 Group:		Libraries
-# http://kde-apps.org/CONTENT/content-files/137323-%{name}-%{version}.tar.bz2 (no longer available)
-Source0:	http://pkgs.fedoraproject.org/repo/pkgs/libalkimia/137323-libalkimia-4.3.2.tar.bz2/8d7b529c7be5f72ae1cbb02e818e9b79/137323-%{name}-%{version}.tar.bz2
-# Source0-md5:	8d7b529c7be5f72ae1cbb02e818e9b79
+Source0:	http://download.kde.org/stable/alkimia/%{version}/src/alkimia-%{version}.tar.xz
+# Source0-md5:	a495c100910f4602cc3e77c0e1c61bc3
 URL:		http://community.kde.org/Alkimia/libalkimia
-BuildRequires:	QtCore-devel >= 4
+BuildRequires:	Qt5Core-devel
+BuildRequires:	Qt5DBus-devel
+BuildRequires:	Qt5Test-devel
 BuildRequires:	cmake >= 2.6.4
 BuildRequires:	doxygen
 BuildRequires:	gmp-c++-devel
-BuildRequires:	kde4-kdelibs-devel >= 4
+BuildRequires:	kf5-extra-cmake-modules
 BuildRequires:	libstdc++-devel
 BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 1.606
@@ -32,9 +33,10 @@ Summary:	Header files for alkimia library
 Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki alkimia
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
-Requires:	QtCore-devel >= 4
+Requires:	Qt5Core-devel
+Requires:	Qt5DBus-devel
 Requires:	gmp-c++-devel
-Requires:	kde4-kdelibs-devel >= 4
+Requires:	kf5-extra-cmake-modules
 Requires:	libstdc++-devel
 
 %description devel
@@ -44,7 +46,7 @@ Header files for alkimia library.
 Pliki nagłówkowe biblioteki alkimia.
 
 %prep
-%setup -q
+%setup -q -n alkimia-%{version}
 
 %build
 install -d build
@@ -66,13 +68,13 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc libalkimia/ChangeLog
-%attr(755,root,root) %{_libdir}/libalkimia.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libalkimia.so.4
+%doc README.md
+%attr(755,root,root) %{_libdir}/libalkimia5.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libalkimia5.so.7
 
 %files devel
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/libalkimia.so
+%attr(755,root,root) %{_libdir}/libalkimia5.so
 %{_includedir}/alkimia
-%{_pkgconfigdir}/libalkimia.pc
-%{_datadir}/apps/cmake/modules/FindLibAlkimia.cmake
+%{_pkgconfigdir}/libalkimia5.pc
+%{_libdir}/cmake/LibAlkimia5*
