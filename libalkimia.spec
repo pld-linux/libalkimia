@@ -2,7 +2,7 @@ Summary:	Common classes and functionality used by finance applications for the K
 Summary(pl.UTF-8):	Wspólne klasy i funkcje wykorzystywane przez aplikacje finansowe dla KDE SC
 Name:		libalkimia
 Version:	8.1.0
-Release:	0.1
+Release:	1
 License:	LGPL v2.1+
 Group:		Libraries
 Source0:	https://download.kde.org/stable/alkimia/%{version}/alkimia-%{version}.tar.xz
