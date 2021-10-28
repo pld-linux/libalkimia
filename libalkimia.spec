@@ -2,7 +2,7 @@ Summary:	Common classes and functionality used by finance applications for the K
 Summary(pl.UTF-8):	Wspólne klasy i funkcje wykorzystywane przez aplikacje finansowe dla KDE SC
 Name:		libalkimia
 Version:	8.1.0
-Release:	2
+Release:	3
 License:	LGPL v2.1+
 Group:		Libraries
 Source0:	https://download.kde.org/stable/alkimia/%{version}/alkimia-%{version}.tar.xz
@@ -58,7 +58,8 @@ Pliki nagłówkowe biblioteki alkimia.
 %build
 install -d build
 cd build
-%cmake ..
+%cmake .. \
+	-DQML_INSTALL_DIR=$(qmake-qt5 -query QT_INSTALL_QML)
 %{__make}
 
 %install
@@ -81,9 +82,9 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/onlinequoteseditor5
 %attr(755,root,root) %{_libdir}/libalkimia5.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libalkimia5.so.8
-%dir %{_libdir}/qml/org/kde/alkimia
-%attr(755,root,root) %{_libdir}/qml/org/kde/alkimia/libqmlalkimia.so
-%{_libdir}/qml/org/kde/alkimia/qmldir
+%dir %{_libdir}/qt5/qml/org/kde/alkimia
+%attr(755,root,root) %{_libdir}/qt5/qml/org/kde/alkimia/libqmlalkimia.so
+%{_libdir}/qt5/qml/org/kde/alkimia/qmldir
 %{_desktopdir}/org.kde.onlinequoteseditor5.desktop
 %{_iconsdir}/hicolor/*x*/apps/onlinequoteseditor5.png
 %{_iconsdir}/hicolor/scalable/apps/onlinequoteseditor5.svgz
